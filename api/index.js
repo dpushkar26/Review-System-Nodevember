@@ -17,12 +17,15 @@ dotenv.config();
 
 dbConnect();
 
+app.get("/",(req, res) => {
+  res.json({
+    success: true,
+    message: "Success Running Successfully"
+  })
+})
 
 
 app.listen(PORT, () => {
   console.log("Server is running at port:", PORT);
 });
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-}
-)
+
